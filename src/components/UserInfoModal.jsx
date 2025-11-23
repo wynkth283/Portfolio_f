@@ -91,7 +91,7 @@ export default function UserInfoModal() {
             }
     
             $.ajax({
-                url: `${API_URL.CHANGE_PASSWORD}/${id}`,
+                url: `${API_URL.CHANGE_PASSWORD}/?id=${id}`,
                 type: "PUT",
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('token')}`,

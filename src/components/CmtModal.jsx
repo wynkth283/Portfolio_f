@@ -23,7 +23,7 @@ export default function CmtModal() {
             .then(r => r.json())
             .then(data => {
                 setComments(data.data);
-                setTotalComments(data.total);   // ← LẤY TỔNG SỐ Ở ĐÂY
+                setTotalComments(data.total);
                 setHasMore(data.current_page < data.last_page);
             });
     }, []);
