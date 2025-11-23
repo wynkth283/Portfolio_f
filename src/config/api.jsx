@@ -1,4 +1,4 @@
-const API_BASE = import.meta.env.VITE_API_BASE || 'https://portfolio-huynhhungthinh.jobvlute.com';
+const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:8000';
 const BASE = API_BASE.endsWith('/') ? API_BASE.slice(0, -1) : API_BASE;
 export const API_URL = {
     BASE: API_BASE,
