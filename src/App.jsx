@@ -9,7 +9,7 @@ import AuthModal from "./components/AuthModal"
 import ForgotPasswordModal from "./components/ForgotPassword"
 import ActionButtonGroup from "./components/ActionButtonGroup"
 import CmtModal from "./components/CmtModal"
-import UserInfoModal from "./components/userInfoModal"
+import UserInfoModal from "./components/UserInfoModal"
 import { isLogin } from './utils/Auth';
 
 function App() {
