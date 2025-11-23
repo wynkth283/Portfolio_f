@@ -1,0 +1,114 @@
+.modal-content {
+    background: none;
+    border: none;
+    font-family: 'Segoe UI', sans-serif;
+    color: var(--cl-text);
+}
+
+.auth-card {
+    background: linear-gradient(135deg, #010e2533 0%, #002c5d5c 100%);
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    max-width: 440px;
+    width: 100%;
+    margin: auto;
+    border: 1px solid rgb(255 255 255 / 0%);
+    backdrop-filter: blur(5px);
+}
+
+.nav-tabs {
+    border: none;
+    background: rgba(255,255,255,0.08);
+    margin: 0;
+}
+
+.nav-tabs .nav-link {
+    border: none;
+    color: var(--cl-grey-light);
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    transition: var(--transition);
+}
+
+.nav-tabs .nav-link.active {
+    background: var(--cl-accent);
+    color: var(--cl-text);
+    box-shadow: 0 6px 20px rgba(27, 77, 133, 0.5);
+}
+
+.tab-content {
+    padding: 2.5rem;
+    background: linear-gradient(135deg, #010e2552 0%, #002c5da6 100%);
+    backdrop-filter: blur(5px);
+    box-shadow: inset 0px -9px 20px var(--cl-blue-1);
+}
+
+.form-control {
+    background: rgba(255,255,255,0.1);
+    border: 1.5px solid rgba(255,255,255,0.2);
+    border-radius: 5px;
+    padding: 0.75rem 1rem;
+    color: var(--cl-text);
+    transition: var(--transition);
+}
+
+.form-control:disabled {
+    background: rgba(255, 255, 255, 0.323);
+}
+
+.form-control::placeholder {
+    color: var(--cl-grey-light);
+}
+
+.form-control:focus {
+    background: rgb(255 255 255 / 15%);
+    border-color: #ffffff;
+    box-shadow: inset 0px 0px 20px 0rem rgb(136 136 136);
+    color: var(--cl-text);
+}
+
+.form-label {
+    font-weight: 600;
+    color: var(--cl-text);
+    margin-bottom: 0.5rem;
+}
+
+.btn-action {
+    border-radius: 5px;
+    padding: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-login, .btn-register {
+    background: #1b4d855c;
+    backdrop-filter: blur(10px);
+    border: none;
+    color: var(--cl-text);
+}
+
+.form-check-input:checked {
+    background-color: var(--cl-accent);
+    border-color: var(--cl-accent);
+}
+
+.text-link {
+    color: var(--cl-grey-light);
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.text-link:hover {
+    color: var(--cl-text);
+}
+
+.transparent {
+    background: #07075870 !important;
+    box-shadow: inset 0px 0px 10px var(--cl-blue-1) !important;
+}
+
