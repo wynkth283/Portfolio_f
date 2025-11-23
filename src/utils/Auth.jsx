@@ -1,3 +1,4 @@
+import {API_URL} from './../config/api';
 export const getToken = () => localStorage.getItem('token');
 export const getUser  = () => {
     try { return JSON.parse(localStorage.getItem('user')); }
@@ -8,7 +9,7 @@ export const logout = async () => {
     try {
         const token = localStorage.getItem('token');
         if (token) {
-            await fetch('http://localhost:8000/api/logout', {
+            await fetch(API_URL.LOGOUT, {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${token}`,
