@@ -21,7 +21,6 @@ export const logout = async () => {
     } catch (error) {
         console.log('Logout error (có thể token đã hết hạn):', error);
     } finally {
-        // Dù backend lỗi hay không → vẫn xóa localStorage
         localStorage.removeItem('token');
         localStorage.removeItem('user');
         window.location.href = '/';
