@@ -57,17 +57,17 @@ export default function AuthModal() {
             const passwordConfirm = $('.password-confirm', form).val();
             
             if (!name || !email || !password) {
-                showToast('error', 'Vui lòng điền đầy đủ thông tin');
+                showToast('error', 'Please fill in all information');
                 return;
             }
             
             if (password.length < 8) {
-                showToast('error', 'Mật khẩu phải có ít nhất 8 ký tự');
+                showToast('error', 'Password must be 8 characters long');
                 return;
             }
             
             if (password !== passwordConfirm) {
-                showToast('error', 'Mật khẩu xác nhận không khớp');
+                showToast('error', 'Confirm password does not match the password');
                 return;
             }
             
@@ -86,7 +86,7 @@ export default function AuthModal() {
                         $('.password-confirm', form).val('');
                         $('#agree').prop('checked', false);
                         $('#AuthForm').modal('hide');
-                        showToast('success', 'Đăng ký thành công!');
+                        showToast('success', 'Registration successful!');
                     } else {
                         showToast('error', res.message);
                     }
@@ -94,7 +94,7 @@ export default function AuthModal() {
                 error: function (xhr) {
                     const errorMessage = xhr.responseJSON?.message || xhr.responseJSON?.errors ? 
                         Object.values(xhr.responseJSON.errors).flat().join(', ') : 
-                        'Đã xảy ra lỗi khi đăng ký';
+                        'An error occurred while registering.';
                     showToast('error', errorMessage);
                 }
             });
