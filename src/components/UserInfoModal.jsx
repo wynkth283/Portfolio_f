@@ -44,7 +44,6 @@ export default function UserInfoModal() {
             dataType: "json",
             success: function (res) {
                 if (res.message === "success") {
-                    // Cập nhật localStorage ngay lập tức
                     const updatedUser = {
                         ...authUser,
                         name:  $('#info .name').val(),
@@ -69,7 +68,7 @@ export default function UserInfoModal() {
         const handleChangePassword = function () {
             const id = authUser?.id;
             if (!id) {
-                showToast('error', 'Không tìm thấy người dùng');
+                showToast('error', 'User not found!');
                 return;
             }
     
@@ -78,15 +77,15 @@ export default function UserInfoModal() {
             const confirmPassword = $('#changePassForm .confirm-password').val();
     
             if (!currentPassword) {
-                showToast('warning', 'Vui lòng nhập mật khẩu hiện tại');
+                showToast('warning', 'Please enter current password');
                 return;
             }
             if (newPassword.length < 8) {
-                showToast('warning', 'Mật khẩu mới phải từ 8 ký tự');
+                showToast('warning', 'New password must be 8 characters long');
                 return;
             }
             if (newPassword !== confirmPassword) {
-                showToast('warning', 'Xác nhận mật khẩu không khớp');
+                showToast('warning', 'Confirm password does not match new password');
                 return;
             }
     
@@ -107,7 +106,7 @@ export default function UserInfoModal() {
                     confirm_password: confirmPassword
                 }),
                 success: function () {
-                    showToast('success', 'Đổi mật khẩu thành công! Đang đăng xuất...');
+                    showToast('success', 'Password changed successfully!');
                     $('#changePassForm')[0].reset();
                     $('#changePasswordModal').modal('hide');
     
@@ -118,7 +117,7 @@ export default function UserInfoModal() {
                     }, 1500);
                 },
                 error: function (xhr) {
-                    let msg = 'Lỗi đổi mật khẩu';
+                    let msg = 'Password change error';
     
                     if (xhr.responseJSON?.message) {
                         msg = xhr.responseJSON.message;
