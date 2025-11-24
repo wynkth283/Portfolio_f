@@ -65,7 +65,8 @@ export default function UserInfoModal() {
     };
 
     useEffect(() => {
-        const handleChangePassword = function () {
+        const handleChangePassword = function (event) {
+            event?.preventDefault();
             const id = authUser?.id;
             if (!id) {
                 showToast('error', 'User not found!');
@@ -107,7 +108,7 @@ export default function UserInfoModal() {
                 }),
                 success: function () {
                     showToast('success', 'Password changed successfully!');
-                    $('#changePassForm')[0].reset();
+                    document.getElementById('changePassForm')?.reset();
                     $('#changePasswordModal').modal('hide');
     
                     setTimeout(() => {
@@ -218,7 +219,7 @@ export default function UserInfoModal() {
                                 </div>
                 
                                 <div className="tab-pane fade" id="setting">
-                                    <div id="changePassForm">
+                                    <form id="changePassForm">
                                         <div className="mb-3">
                                             <label className="form-label" htmlFor="password"><i className="fas fa-lock me-2"></i>Current password</label>
                                             <input type="password" id="password" className="form-control current-password" required />
@@ -237,7 +238,7 @@ export default function UserInfoModal() {
                                         <button className="cta-button glass transparent w-100" type="button" onClick={logout}>
                                             <i className="fa-solid fa-right-from-bracket me-2"></i> Logout
                                         </button>
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
