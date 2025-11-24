@@ -91,12 +91,15 @@ export default function UserInfoModal() {
             }
     
             $.ajax({
-                url: `${API_URL.CHANGE_PASSWORD}/?id=${id}`,
+                url: `${API_URL.CHANGE_PASSWORD}`,
                 type: "PUT",
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('token')}`,
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
+                },
+                xhrFields: {
+                    withCredentials: true,
                 },
                 data: JSON.stringify({
                     current_password: currentPassword,

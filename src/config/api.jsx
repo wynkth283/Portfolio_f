@@ -12,7 +12,7 @@ export const API_URL = {
     FORGOT_PASSWORD: `${API_BASE}/api/forgot-password`,
     VERIFY_OTP: `${API_BASE}/api/verify-otp`,
     RESET_PASSWORD: `${API_BASE}/api/reset-password`,
-    CHANGE_PASSWORD: `${API_BASE}/api/users/change-password`,
+    CHANGE_PASSWORD: `${API_BASE}/api/users/password/change`,
     AUTH: `${API_BASE}/api/users/auth`,
 };
 export {BASE};
