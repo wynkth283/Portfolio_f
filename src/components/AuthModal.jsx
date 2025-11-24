@@ -22,7 +22,7 @@ export default function AuthModal() {
     
             const data = await res.json();
     
-            if (!res.ok) {
+            if (!res.ok || data.success === false) {
                 showToast('error', 'Login failed! ' + data.message);
                 return;
             }
@@ -35,7 +35,7 @@ export default function AuthModal() {
             showToast('success', 'Login successful!');
 
             if (data.user?.role === 'admin') {
-                window.location.href = API_URL.BASE;
+                window.location.href = `${API_URL.BASE}?token=${data.token}`;
             } else {
                 window.location.reload();
             }

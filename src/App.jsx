@@ -11,6 +11,7 @@ import ActionButtonGroup from "./components/ActionButtonGroup"
 import CmtModal from "./components/CmtModal"
 import UserInfoModal from "./components/UserInfoModal"
 import { isLogin } from './utils/Auth';
+import { useEffect } from "react";
 
 function App() {
     const User = [{
@@ -25,7 +26,29 @@ function App() {
         thoigianhoc: "09/2021 - 11/2025",
         mota_hocvan: "Relevant coursework: Data Structures and Algorithms, Database Systems, Web Development, Software Engineering, Computer Networks, Operating Systems.",
     }];
-    
+    useEffect(() => {
+        // Kiểm tra nếu có query parameter logout=true
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        if (urlParams.get('logout') === 'true') {
+            // Xóa token và user khỏi localStorage
+            localStorage.removeItem('token');
+            localStorage.removeItem('user');
+            
+            // Hiển thị thông báo
+            if (typeof showToast !== 'undefined') {
+                showToast('success', 'Logged out successfully!');
+            }
+            
+            // Xóa query parameter khỏi URL
+            window.history.replaceState({}, document.title, window.location.pathname);
+            
+            // Reload trang để cập nhật UI
+            setTimeout(() => {
+                window.location.reload();
+            }, 500);
+        }
+    }, []);
     return (
         <>
             <canvas id="galaxy-bg"></canvas>
