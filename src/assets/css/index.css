@@ -291,6 +291,21 @@ h2 {
   cursor: pointer;
   min-width: 110px;
 }
+.skills-language-helper {
+  margin: -8px 0 14px 0;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.75);
+}
+.language-toggle-grid .skill-card {
+  min-width: 150px;
+  border: 1px solid transparent;
+}
+.language-card--active {
+  border-color: var(--cl-accent);
+  background: rgba(255,255,255,0.18);
+  box-shadow: 0 6px 18px var(--cl-blue-1);
+  transform: translateY(-4px);
+}
 .skill-card i {
   font-size: 2.2rem;
   margin-bottom: 8px;

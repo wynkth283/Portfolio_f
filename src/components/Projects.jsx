@@ -2,8 +2,10 @@ import ProjectCard from "./ProjectCard";
 import { useState, useEffect } from 'react';
 import SkeletonProject from "./SkeletonProject";
 import {API_URL} from './../config/api';
+import { useLanguage } from "../context/LanguageContext";
 
 export default function Projects() {
+    const { t } = useLanguage();
     // const projects = [
     //     {   
     //         id: 1,
@@ -55,7 +57,7 @@ export default function Projects() {
             <>
                 <section id="projects" className="section section-2col">
                     <div className="section-content">
-                        <h2 className="effect-fade-left">Projects</h2>
+                        <h2 className="effect-fade-left">{t.projectsTitle}</h2>
                         <div className="timeline">
                             <SkeletonProject></SkeletonProject>
                         </div>
@@ -65,13 +67,13 @@ export default function Projects() {
         )
     }
 
-    if(projects.length === 0) { return <div className="text-center">No projects found</div> }
+    if(projects.length === 0) { return <div className="text-center">{t.projectsEmpty}</div> }
 
     return (
         <>
             <section id="projects" className="section section-2col">
                 <div className="section-content">
-                    <h2 className="effect-fade-left">Projects</h2>
+                    <h2 className="effect-fade-left">{t.projectsTitle}</h2>
                     <div className="timeline">
                         {projects.map(project => (
                             <ProjectCard key={project.id} project={project}></ProjectCard>

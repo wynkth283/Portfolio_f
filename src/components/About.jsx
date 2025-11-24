@@ -1,6 +1,8 @@
 import aboutIMG from './../assets/IMG/about.jpg'
+import { useLanguage } from "../context/LanguageContext";
 
 function About({user}) {
+    const { t } = useLanguage();
     return (
         <>
             <section id="about" className="section section-2col">
@@ -8,7 +10,7 @@ function About({user}) {
                     <img src={ aboutIMG } alt="About illustration" height="300" width="300" />
                 </div>
                 <div className="section-content effect-fade-right">
-                    <h2>About Me</h2>
+                    <h2>{t.aboutTitle}</h2>
                     <p>{user.loigioithieu}</p>
                 </div>
             </section>
